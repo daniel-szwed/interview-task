@@ -11,7 +11,8 @@ internal class Program
     public static void Main(string[] args)
     {
         var fileName = "zadanie_input.txt";
-        var mapProvider = new MapProvider();
+        var mapLoader = new MapLoader();
+        var mapProvider = new MapProvider(mapLoader);
         var seedProvider = new SeedProvider();
         var seeds = seedProvider.GetSeeds(fileName, InputFileHeaders.Seeds);
         var seedToLocation = new Dictionary<long, long>();
